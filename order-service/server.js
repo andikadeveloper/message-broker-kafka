@@ -1,6 +1,6 @@
 import express from 'express';
-import axios from 'axios';
 import bodyParser from 'body-parser';
+import { sendNotification } from './notification-service.js';
 
 const app = express()
 const port = 9901
@@ -16,29 +16,20 @@ app.post('/orders', async (req, res) => {
     })
   }
 
-  // Save order
-  // ...
-
-  // Send notification
-  try {
-    const orderId = req.body.order_id
-    const notification = {
+  // Notification payload
+  const orderId = req.body.order_id
+  const notification = {
       order_id: orderId,
       message: `New order ${orderId} has been placed`
-    }
-    const result = await axios.post('http://localhost:9902/notifications', notification)
+  }
 
-    if (!result.data.success) {
-      return res.status(500).json({
-        success: false,
-        message: 'Failed to send notification'
-      })
-    }
-  } catch (error) {
+  // Send notification
+  const result = await sendNotification(notification)
+  if (!result) {
     return res.status(500).json({
       success: false,
       message: 'Failed to send notification'
-    }) 
+    })
   }
   
   res.json({
