@@ -230,6 +230,12 @@ class: text-center
 <p class="text-gray-500">Move existing application communication from Rest API to Message Broker</p>
 </v-click>
 
+<v-click>
+<a href="https://github.com/andikadeveloper/message-broker-kafka" class="text-blue-500" target="_blank">
+https://github.com/andikadeveloper/message-broker-kafka
+</a>
+</v-click>
+
 
 ---
 transition: slide-left
