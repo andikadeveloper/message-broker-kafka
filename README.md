@@ -10,3 +10,6 @@
 2. Run `docker-compose up` in the root directory
 3. Run `npm install` in the `order-service` and `notification-service` directory
 4. Run `npm run dev` in the `order-service` and `notification-service` directory
+
+## Slide presentation
+Link: [Message broker kafka](https://andikadeveloper-message-broker-kafka.vercel.app)
