@@ -10,6 +10,7 @@ drawings:
   persist: false
 transition: slide-up
 mdc: true
+favicon: '/img/favicon.jpg'
 ---
 # Message broker implementation with Kafka
 @andikadeveloper
